@@ -1,48 +1,59 @@
-### Regras de Negócio para a API de Matchmaking de Desenvolvedores e Empresas
+### Business Rules for the Matchmaking API for Developers and Companies
 
-#### 1. **Cadastro de Usuários**
-   - **Tipos de Usuários**: A API deve suportar dois tipos de usuários: **Desenvolvedores** e **Empresas**.
-   - **Informações Necessárias**:
-     - **Desenvolvedores**: Nome, Email, Stack de Tecnologias, Experiência (anos), Localização, Disponibilidade (freelancer, full-time, part-time), Bio, GitHub/LinkedIn.
-     - **Empresas**: Nome da Empresa, Email, Localização, Setor de Atuação, Vagas Abertas, Descrição da Empresa, Website/LinkedIn.
+#### 1. **User Registration**
 
-#### 2. **Criação de Perfis**
-   - **Desenvolvedores** devem criar um perfil detalhando suas habilidades, experiências, e preferências de trabalho.
-   - **Empresas** devem criar um perfil com informações sobre a cultura da empresa, vagas disponíveis, requisitos de vagas, e detalhes de contato.
+- **User Types**: The API should support two types of users: **Developers** and **Companies**.
+- **Required Information**:
+  - **Developers**: Name, Email, Technology Stack, Experience (years), Location, Availability (freelancer, full-time, part-time), Bio, GitHub/LinkedIn.
+  - **Companies**: Company Name, Email, Location, Industry, Open Positions, Company Description, Website/LinkedIn.
 
-#### 3. **Sistema de Matchmaking**
-   - **Critérios de Matchmaking**:
-     - **Para Desenvolvedores**: Tecnologias desejadas, tipo de contrato, localização, faixa salarial.
-     - **Para Empresas**: Habilidades técnicas, experiência necessária, disponibilidade, localização.
+#### 2. **Profile Creation**
 
-#### 4. **Sistema de Avaliação e Feedback**
-   - **Avaliação**: Tanto desenvolvedores quanto empresas podem ser avaliados com uma escala de 1 a 5 estrelas após o processo de entrevista ou conclusão de um projeto.
-   - **Feedback**: Opção para deixar comentários construtivos que serão exibidos no perfil dos usuários.
+- **Developers** should create a profile detailing their skills, experiences, and work preferences.
+- **Companies** should create a profile with information about company culture, available positions, job requirements, and contact details.
 
-#### 5. **Comunicação**
-   - A API deve permitir a troca de mensagens entre desenvolvedores e empresas apenas após um "match".
-   - **Restrições de Mensagem**: Apenas mensagens de texto; arquivos ou links podem ser restritos para evitar spam ou comportamento inadequado.
+#### 3. **Matchmaking System**
 
-#### 6. **Privacidade e Segurança**
-   - **Proteção de Dados**: Todos os dados dos usuários devem ser protegidos de acordo com as leis de proteção de dados aplicáveis (como LGPD, GDPR).
-   - **Opção de Anonimato**: Desenvolvedores podem optar por mostrar apenas informações limitadas até que um match seja realizado.
+- **Matchmaking Criteria**:
+  - **For Developers**: Desired technologies, contract type, location, salary range.
+  - **For Companies**: Technical skills, required experience, availability, location.
 
-#### 7. **Pagamentos e Planos**
-   - **Planos para Empresas**:
-     - **Plano Básico**: Permite um número limitado de matches por mês.
-     - **Plano Premium**: Matches ilimitados, acesso a uma base de dados avançada de candidatos, e opções de filtro mais detalhadas.
-   - **Comissão de Sucesso**: Uma taxa pode ser cobrada das empresas em caso de contratação de um desenvolvedor através da plataforma.
+#### 4. **Rating and Feedback System**
 
-#### 8. **Gerenciamento de Vagas**
-   - Empresas podem postar vagas com descrições detalhadas, requisitos, e benefícios.
-   - Desenvolvedores podem se candidatar diretamente através da plataforma.
+- **Rating**: Both developers and companies can be rated on a scale of 1 to 5 stars after the interview process or project completion.
+- **Feedback**: Option to leave constructive comments that will be displayed on user profiles.
 
-#### 9. **Notificações**
-   - Notificações para novos matches, mensagens, e oportunidades de trabalho relevantes devem ser enviadas para os usuários.
+#### 5. **Communication**
 
-#### 10. **Relatórios e Análises**
-   - Empresas podem acessar relatórios sobre o desempenho de suas vagas e a eficácia dos filtros de match.
-   - Desenvolvedores podem acessar relatórios sobre suas candidaturas e feedbacks recebidos.
+- The API should allow message exchanges between developers and companies only after a "match" is made.
+- **Message Restrictions**: Only text messages; files or links may be restricted to prevent spam or inappropriate behavior.
 
-### Considerações Finais
-Essas regras de negócio são apenas um ponto de partida e podem ser ajustadas conforme o desenvolvimento da API e o feedback dos usuários. A ideia é criar uma plataforma justa e eficiente que facilite o encontro entre desenvolvedores e empresas de forma segura e transparente.
+#### 6. **Privacy and Security**
+
+- **Data Protection**: All user data must be protected in accordance with applicable data protection laws (such as LGPD, GDPR).
+- **Anonymity Option**: Developers can choose to show only limited information until a match is made.
+
+#### 7. **Payments and Plans**
+
+- **Plans for Companies**:
+  - **Basic Plan**: Allows a limited number of matches per month.
+  - **Premium Plan**: Unlimited matches, access to an advanced candidate database, and more detailed filtering options.
+- **Success Fee**: A fee may be charged to companies upon hiring a developer through the platform.
+
+#### 8. **Job Management**
+
+- Companies can post job openings with detailed descriptions, requirements, and benefits.
+- Developers can apply directly through the platform.
+
+#### 9. **Notifications**
+
+- Notifications for new matches, messages, and relevant job opportunities should be sent to users.
+
+#### 10. **Reports and Analytics**
+
+- Companies can access reports on the performance of their job postings and the effectiveness of matchmaking filters.
+- Developers can access reports on their applications and received feedback.
+
+### Final Considerations
+
+These business rules are just a starting point and may be adjusted as the API develops and user feedback is received. The idea is to create a fair and efficient platform that facilitates the meeting of developers and companies safely and transparently.

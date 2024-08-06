@@ -1,42 +1,42 @@
-## Índice
+## Table of Contents
 
-1. [Visão Geral](#visão-geral)
-2. [Tecnologias Utilizadas](#tecnologias-utilizadas)
-3. [Arquitetura](#arquitetura)
-4. [Modelos de Dados](#modelos-de-dados)
-5. [Endpoints da API](#endpoints-da-api)
-6. [Autenticação e Autorização](#autenticação-e-autorização)
-7. [Validação e Tratamento de Erros](#validação-e-tratamento-de-erros)
-8. [Testes](#testes)
-9. [Boas Práticas e Padrões de Código](#boas-práticas-e-padrões-de-código)
+1. [Overview](#overview)
+2. [Technologies Used](#technologies-used)
+3. [Architecture](#architecture)
+4. [Data Models](#data-models)
+5. [API Endpoints](#api-endpoints)
+6. [Authentication and Authorization](#authentication-and-authorization)
+7. [Validation and Error Handling](#validation-and-error-handling)
+8. [Testing](#testing)
+9. [Best Practices and Coding Standards](#best-practices-and-coding-standards)
 
 ---
 
-## Visão Geral
+## Overview
 
-Esta API é destinada a conectar desenvolvedores e empresas, oferecendo um sistema de matchmaking baseado em habilidades, preferências e requisitos. A API permite o cadastro de perfis, a busca por candidatos e vagas, e a comunicação entre as partes após um "match".
+This API is designed to connect developers and companies, offering a matchmaking system based on skills, preferences, and requirements. The API allows profile registration, candidate and job search, and communication between parties after a "match."
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-- **Linguagem**: C# com .NET 8
-- **Banco de Dados**: MySQL com Entity Framework Core
-- **Autenticação**: JWT (JSON Web Tokens)
-- **Validação**: FluentValidation
-- **Documentação**: Swagger
-- **Testes**: xUnit, Moq
+- **Language**: C# with .NET 8
+- **Database**: MySQL with Entity Framework Core
+- **Authentication**: JWT (JSON Web Tokens)
+- **Validation**: FluentValidation
+- **Documentation**: Swagger
+- **Testing**: xUnit, Moq
 
-## Arquitetura
+## Architecture
 
-A API segue uma arquitetura de **camadas** baseada em DDD (Domain-Driven Design), incluindo:
+The API follows a **layered architecture** based on Domain-Driven Design (DDD), including:
 
-- **Domain Layer**: Contém os modelos de domínio e as regras de negócio.
-- **Application Layer**: Gerencia a lógica de aplicação, incluindo serviços e casos de uso.
-- **Infrastructure Layer**: Lida com a persistência de dados e a comunicação com o banco de dados.
-- **Presentation Layer**: Responsável pela interface de comunicação da API (controllers).
+- **Domain Layer**: Contains domain models and business rules.
+- **Application Layer**: Manages application logic, including services and use cases.
+- **Infrastructure Layer**: Handles data persistence and communication with the database.
+- **Presentation Layer**: Responsible for the API's communication interface (controllers).
 
-## Modelos de Dados
+## Data Models
 
-### Usuário
+### User
 
 ```csharp
 public class User
@@ -51,7 +51,7 @@ public class User
 }
 ```
 
-### Desenvolvedor
+### Developer
 
 ```csharp
 public class Developer : User
@@ -66,7 +66,7 @@ public class Developer : User
 }
 ```
 
-### Empresa
+### Company
 
 ```csharp
 public class Company : User
@@ -80,7 +80,7 @@ public class Company : User
 }
 ```
 
-### Oferta de Trabalho
+### Job Offer
 
 ```csharp
 public class JobOffer
@@ -95,58 +95,58 @@ public class JobOffer
 }
 ```
 
-## Endpoints da API
+## API Endpoints
 
-### Autenticação
+### Authentication
 
-- `POST /api/auth/register`: Registro de usuários (Desenvolvedor ou Empresa).
-- `POST /api/auth/login`: Login de usuários e geração de token JWT.
+- `POST /api/auth/register`: User registration (Developer or Company).
+- `POST /api/auth/login`: User login and JWT token generation.
 
-### Desenvolvedores
+### Developers
 
-- `GET /api/developers`: Listar todos os desenvolvedores.
-- `GET /api/developers/{id}`: Obter detalhes de um desenvolvedor específico.
-- `PUT /api/developers/{id}`: Atualizar informações de um desenvolvedor.
-- `DELETE /api/developers/{id}`: Deletar um desenvolvedor.
+- `GET /api/developers`: List all developers.
+- `GET /api/developers/{id}`: Get details of a specific developer.
+- `PUT /api/developers/{id}`: Update developer information.
+- `DELETE /api/developers/{id}`: Delete a developer.
 
-### Empresas
+### Companies
 
-- `GET /api/companies`: Listar todas as empresas.
-- `GET /api/companies/{id}`: Obter detalhes de uma empresa específica.
-- `PUT /api/companies/{id}`: Atualizar informações de uma empresa.
-- `DELETE /api/companies/{id}`: Deletar uma empresa.
+- `GET /api/companies`: List all companies.
+- `GET /api/companies/{id}`: Get details of a specific company.
+- `PUT /api/companies/{id}`: Update company information.
+- `DELETE /api/companies/{id}`: Delete a company.
 
-### Ofertas de Trabalho
+### Job Offers
 
-- `GET /api/joboffers`: Listar todas as ofertas de trabalho.
-- `GET /api/joboffers/{id}`: Obter detalhes de uma oferta de trabalho específica.
-- `POST /api/joboffers`: Criar uma nova oferta de trabalho.
-- `PUT /api/joboffers/{id}`: Atualizar uma oferta de trabalho.
-- `DELETE /api/joboffers/{id}`: Deletar uma oferta de trabalho.
+- `GET /api/joboffers`: List all job offers.
+- `GET /api/joboffers/{id}`: Get details of a specific job offer.
+- `POST /api/joboffers`: Create a new job offer.
+- `PUT /api/joboffers/{id}`: Update a job offer.
+- `DELETE /api/joboffers/{id}`: Delete a job offer.
 
 ### Matchmaking
 
-- `POST /api/match`: Realizar um match entre desenvolvedor e empresa.
-- `GET /api/matches`: Listar todos os matches.
+- `POST /api/match`: Create a match between a developer and a company.
+- `GET /api/matches`: List all matches.
 
-## Autenticação e Autorização
+## Authentication and Authorization
 
-- Utilização de **JWT** para autenticação de usuários.
-- **Autorização baseada em papéis**: A API diferencia permissões para desenvolvedores e empresas.
+- Use of **JWT** for user authentication.
+- **Role-based authorization**: The API differentiates permissions for developers and companies.
 
-## Validação e Tratamento de Erros
+## Validation and Error Handling
 
-- **Validação**: Implementada com **FluentValidation** para garantir a integridade dos dados recebidos.
-- **Tratamento de Erros**: Centralizado em um middleware de tratamento de exceções, garantindo respostas consistentes para erros.
+- **Validation**: Implemented with **FluentValidation** to ensure the integrity of received data.
+- **Error Handling**: Centralized in an exception handling middleware, ensuring consistent error responses.
 
-## Testes
+## Testing
 
-- **Unitários**: Testes de métodos e funcionalidades isoladas.
-- **Integração**: Testes que verificam a interação entre diferentes partes do sistema.
-- **Cobertura de Testes**: Buscamos uma cobertura mínima de 80%.
+- **Unit**: Tests for isolated methods and functionalities.
+- **Integration**: Tests verifying interactions between different parts of the system.
+- **Test Coverage**: Aim for a minimum of 80% coverage.
 
-## Boas Práticas e Padrões de Código
+## Best Practices and Coding Standards
 
-- **Clean Code**: Mantemos o código limpo, legível e modular.
-- **SOLID**: Seguimos os princípios SOLID para design de software.
-- **Revisão de Código**: Todos os códigos devem passar por revisão antes de serem integrados ao projeto.
+- **Clean Code**: Maintain clean, readable, and modular code.
+- **SOLID**: Follow SOLID principles for software design.
+- **Code Review**: All code must undergo review before being merged into the project.
