@@ -75,6 +75,7 @@ After starting the application, you can access the API documentation on Swagger 
 
 - `GET /api/developers`: List all developers.
 - `GET /api/developers/{id}`: Get details of a specific developer.
+- `POST /api/developers`: Create a new Developer account.
 - `PUT /api/developers/{id}`: Update developer information.
 - `DELETE /api/developers/{id}`: Delete a developer.
 
@@ -82,6 +83,7 @@ After starting the application, you can access the API documentation on Swagger 
 
 - `GET /api/companies`: List all companies.
 - `GET /api/companies/{id}`: Get details of a specific company.
+- `POST /api/companies`: Create a new Company account.
 - `PUT /api/companies/{id}`: Update company information.
 - `DELETE /api/companies/{id}`: Delete a company.
 
