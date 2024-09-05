@@ -19,4 +19,5 @@ jobs:
           version: latest
 
       - name: Run Biome
+        run: biome check --write
         run: biome ci .
