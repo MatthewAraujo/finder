@@ -1,11 +1,11 @@
-import { Body, Controller, Get } from '@nestjs/common'
+import { Controller, Get } from '@nestjs/common'
 
 @Controller('/')
 export class AuthenticateController {
-	@Get()
-	async handle() {
-		return {
-			hello: 'World',
-		}
-	}
+  @Get()
+  async handle() {
+    return {
+      hello: 'World',
+    }
+  }
 }

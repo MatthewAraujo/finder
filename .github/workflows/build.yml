@@ -2,12 +2,16 @@ name: Build Project
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - dev
   pull_request:
-    branches: [main]
+    branches:
+      - main
+      - dev
 
 jobs:
-  build:
+  linting:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
