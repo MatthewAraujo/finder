@@ -19,12 +19,9 @@ This API is designed to provide a matchmaking platform between developers and co
 
 ## Technologies Used
 
-- **Language**: C# with .NET 8
-- **Database**: MySQL with Entity Framework Core
+- **Language**: Node with Nestjs
+- **Database**: Posgress with Prisma
 - **Authentication**: JWT (JSON Web Tokens)
-- **Validation**: FluentValidation
-- **Documentation**: Swagger
-- **Testing**: xUnit, Moq
 
 ## Installation
 
@@ -36,29 +33,7 @@ This API is designed to provide a matchmaking platform between developers and co
 
 ### Steps
 
-1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/MatthewAraujo/job_finder.git
-   cd job_finder
-   ```
-
-2. Configure the database:
-
-   - Create a MySQL database.
-   - Update the connection settings in `appsettings.json`.
-
-3. Run the migrations to create the database tables:
-
-   ```bash
-   dotnet ef database update
-   ```
-
-4. Build and run the project:
-
-   ```bash
-   dotnet run
-   ```
 
 ## Usage
 
