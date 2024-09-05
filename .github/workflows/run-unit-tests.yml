@@ -13,8 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
+          cache: "bun"
 
-      - run: npm ci
+      - run: bun install
 
-      - run: npm run test
+      - run: bun run test 
