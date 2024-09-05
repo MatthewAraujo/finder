@@ -18,6 +18,8 @@ jobs:
         with:
           version: latest
 
-      - name: Run Biome
+      - name: Run Biome Linting
         run: biome check --write
+
+      - name: Check Not Linting
         run: biome ci .
