@@ -20,14 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: "20"
-          cache: "npm"
+          bun-version: 1.0.11
 
-      - run: npm ci
+      - run: bun i 
 
-      - run: npm run test:e2e
+      - run: bun run test:e2e
         env:
           JWT_SECRET: testing
           DATABASE_URL: "postgresql://postgres:docker@localhost:5432/finder?schema=public"
