@@ -19,12 +19,9 @@ This API is designed to provide a matchmaking platform between developers and co
 
 ## Technologies Used
 
-- **Language**: C# with .NET 8
-- **Database**: MySQL with Entity Framework Core
+- **Language**: Node with Nestjs
+- **Database**: Posgress with Prisma
 - **Authentication**: JWT (JSON Web Tokens)
-- **Validation**: FluentValidation
-- **Documentation**: Swagger
-- **Testing**: xUnit, Moq
 
 ## Installation
 
