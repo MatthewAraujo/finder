@@ -1,6 +1,6 @@
-name: Run E2E run-unit-tests
+name: Run E2E
 
-on: [push]
+on: [pull-request]
 
 jobs:
   run-unit-tests:
@@ -24,7 +24,7 @@ jobs:
         with:
           bun-version: 1.0.11
 
-      - run: bun i 
+      - run: bun i
 
       - run: bun run test:e2e
         env:
