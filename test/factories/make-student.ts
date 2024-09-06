@@ -1,9 +1,8 @@
-import { faker } from '@faker-js/faker'
-
 import type { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { Student, type StudentProps } from '@/domain/finder/enterprise/entities/student'
 import { PrismaStudentMapper } from '@/infra/database/prisma/mappers/prisma-student-mapper'
 import type { PrismaService } from '@/infra/database/prisma/prisma.service'
+import { faker } from '@faker-js/faker'
 import { Injectable } from '@nestjs/common'
 
 export function makeStudent(override: Partial<StudentProps> = {}, id?: UniqueEntityID) {
