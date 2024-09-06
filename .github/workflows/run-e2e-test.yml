@@ -1,7 +1,6 @@
 name: Run E2E
 
-on: [pull-request]
-
+on: [push, pull_request]
 jobs:
   run-unit-tests:
     name: Run E2E Tests
