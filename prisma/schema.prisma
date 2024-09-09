@@ -29,7 +29,7 @@ model User {
   publicId     Int        @unique @default(autoincrement()) @map("public_id")
   name         String
   email        String     @unique
-  passwordHash String
+  passwordHash String     @map("password_hash")
   role         Role
   createdAt    DateTime   @default(now()) @map("created_at")
   updatedAt    DateTime   @updatedAt @map("updated_at")
